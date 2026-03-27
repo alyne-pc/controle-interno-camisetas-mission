@@ -5,57 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Camisetas - Mission Brasil</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #003259 0%, #1b1b32 100%); color: #e2dfff; min-height: 100vh; }
-        header { background: rgba(17, 17, 39, 0.95); backdrop-filter: blur(10px); padding: 20px 40px; box-shadow: 0 10px 30px rgba(83, 210, 255, 0.15); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: bold; color: #5fd4ff; }
-        nav { display: flex; gap: 30px; }
-        nav a { color: #c3c6cf; text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        nav a:hover { color: #5fd4ff; }
-        nav a.active { color: #5fd4ff; border-bottom: 2px solid #5fd4ff; padding-bottom: 5px; }
-        main { max-width: 1200px; margin: 100px auto 0; padding: 40px 20px; }
-        .hero { text-align: center; margin-bottom: 60px; }
-        .hero h1 { font-size: 48px; color: #5fd4ff; margin-bottom: 20px; }
-        .hero p { font-size: 18px; color: #c3c6cf; margin-bottom: 30px; }
-        .btn { display: inline-block; padding: 12px 30px; background: linear-gradient(90deg, #5fd4ff 0%, #3bb4ff 100%); color: #003259; text-decoration: none; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; font-size: 16px; transition: all 0.3s; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(83, 210, 255, 0.4); }
-        .regulation-card { background: rgba(29, 29, 52, 0.8); border: 1px solid rgba(83, 210, 255, 0.2); border-radius: 12px; padding: 40px; margin: 40px 0; }
-        .regulation-card h2 { color: #5fd4ff; margin-bottom: 30px; font-size: 28px; }
-        .regulation-card ol { margin-left: 20px; line-height: 1.8; }
-        .regulation-card li { margin-bottom: 15px; color: #c3c6cf; }
-        .form-section { background: rgba(29, 29, 52, 0.8); border: 1px solid rgba(83, 210, 255, 0.2); border-radius: 12px; padding: 40px; margin: 40px 0; }
-        .form-section h2 { color: #5fd4ff; margin-bottom: 30px; font-size: 28px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: #ffffff; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; background: #262626; border: 1px solid #2a2a4a; color: #ffffff; border-radius: 6px; font-family: inherit; transition: border-color 0.3s; }
-        .form-group input:focus, .form-group select:focus { outline: none; border-color: #5fd4ff; box-shadow: 0 0 10px rgba(95, 212, 255, 0.2); }
-        footer { background: #111127; border-top: 1px solid rgba(83, 210, 255, 0.1); padding: 30px 20px; text-align: center; color: #c3c6cf; margin-top: 60px; }
-        .success-message { background: rgba(188, 209, 93, 0.1); border-left: 4px solid #bcd15d; padding: 20px; border-radius: 8px; margin: 20px 0; color: #bcd15d; display: none; }
-        .success-message.show { display: block; }
-        @media (max-width: 768px) { header { padding: 15px 20px; } .header-content { flex-direction: column; gap: 15px; } nav { flex-direction: column; gap: 10px; } .hero h1 { font-size: 32px; } main { margin-top: 150px; } }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #003259 0%, #1b1b32 100%);
+            color: #e2dfff;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(17, 17, 39, 0.95);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #5fd4ff;
+        }
+        
+        header h1 {
+            margin: 0;
+            color: #5fd4ff;
+            font-size: 28px;
+        }
+        
+        nav {
+            background: rgba(17, 17, 39, 0.95);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #5fd4ff;
+        }
+        
+        nav a {
+            color: #c3c6cf;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #5fd4ff;
+        }
+        
+        nav a.active {
+            color: #5fd4ff;
+            border-bottom: 2px solid #5fd4ff;
+            padding-bottom: 5px;
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 36px;
+            color: #5fd4ff;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            color: #c3c6cf;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, #5fd4ff 0%, #3bb4ff 100%);
+            color: #003259;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: rgba(29, 29, 52, 0.8);
+            border: 1px solid #5fd4ff;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .card h3 {
+            color: #5fd4ff;
+            margin-top: 0;
+        }
+        
+        .card ol {
+            color: #c3c6cf;
+            line-height: 1.8;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: #262626;
+            border: 1px solid #2a2a4a;
+            color: #ffffff;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #5fd4ff;
+            box-shadow: 0 0 10px rgba(95, 212, 255, 0.2);
+        }
+        
+        .success {
+            background: rgba(188, 209, 93, 0.1);
+            border-left: 4px solid #bcd15d;
+            padding: 15px;
+            border-radius: 5px;
+            color: #bcd15d;
+            display: none;
+            margin: 20px 0;
+        }
+        
+        .success.show {
+            display: block;
+        }
+        
+        footer {
+            background: #111127;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #5fd4ff;
+            color: #c3c6cf;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">Mission Brasil</div>
-            <nav>
-                <a href="index.html" class="active">Solicitação</a>
-                <a href="dashboard.html">Dashboard</a>
-            </nav>
-        </div>
+        <h1>Mission Brasil</h1>
     </header>
-
+    
+    <nav>
+        <a href="index.html" class="active">Solicitação</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+    
     <main>
         <div class="hero">
-            <h1>Solicitação de Camiseta Corporativa</h1>
+            <h2>Solicitação de Camiseta Corporativa</h2>
             <p>Explore nossa política de distribuição e prepare-se para o lançamento.</p>
-            <button class="btn" onclick="scrollToForm()">Iniciar Solicitação</button>
+            <button class="btn" onclick="document.getElementById('formSection').scrollIntoView({behavior: 'smooth'})">Iniciar Solicitação</button>
         </div>
-
-        <div class="regulation-card">
-            <h2>📋 Regulamento da Missão</h2>
+        
+        <div class="card">
+            <h3>📋 Regulamento da Missão</h3>
             <ol>
                 <li><strong>Elegibilidade:</strong> A solicitação é permitida apenas para tripulantes ativos com mais de 30 dias de casa.</li>
                 <li><strong>Quantidade:</strong> Cada colaborador tem direito a 1 (um) kit por ciclo semestral de lançamentos.</li>
@@ -63,22 +185,25 @@
                 <li><strong>Prazo:</strong> O prazo de entrega é de 15 a 20 dias úteis após o fechamento do lote mensal.</li>
             </ol>
         </div>
-
-        <div class="form-section" id="formSection">
-            <h2>📝 Formulário de Solicitação</h2>
+        
+        <div class="card" id="formSection">
+            <h3>📝 Formulário de Solicitação</h3>
             <form id="requestForm" onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label>Nome Completo *</label>
                     <input type="text" name="name" required>
                 </div>
+                
                 <div class="form-group">
                     <label>E-mail Corporativo *</label>
                     <input type="email" name="email" required>
                 </div>
+                
                 <div class="form-group">
                     <label>Telefone *</label>
                     <input type="tel" name="phone" required>
                 </div>
+                
                 <div class="form-group">
                     <label>Tamanho da Camiseta *</label>
                     <select name="size" required>
@@ -89,24 +214,27 @@
                         <option value="GG">GG</option>
                     </select>
                 </div>
+                
                 <button type="submit" class="btn">✓ Enviar Solicitação</button>
             </form>
-            <div class="success-message" id="successMessage">✓ Sua solicitação foi enviada com sucesso! Resultado em até 48 horas úteis.</div>
+            
+            <div class="success" id="successMessage">
+                ✓ Sua solicitação foi enviada com sucesso! Resultado em até 48 horas úteis.
+            </div>
         </div>
     </main>
-
+    
     <footer>
         <p>© Mission Brasil - The Celestial Navigator</p>
     </footer>
-
+    
     <script>
-        function scrollToForm() {
-            document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
-        }
         function submitForm(event) {
             event.preventDefault();
+            
             const form = document.getElementById('requestForm');
             const formData = new FormData(form);
+            
             const data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -115,13 +243,19 @@
                 status: 'Pendente',
                 date: new Date().toLocaleString('pt-BR')
             };
+            
             let requests = JSON.parse(localStorage.getItem('requests')) || [];
             requests.push(data);
             localStorage.setItem('requests', JSON.stringify(requests));
+            
             const successMsg = document.getElementById('successMessage');
             successMsg.classList.add('show');
+            
             form.reset();
-            setTimeout(() => { successMsg.classList.remove('show'); }, 5000);
+            
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
         }
     </script>
 </body>
