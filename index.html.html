@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#2e2e46",
+              "surface-container-highest": "#33324b",
+              "on-primary": "#003259",
+              "on-secondary-container": "#003848",
+              "on-primary-fixed-variant": "#214971",
+              "surface-variant": "#33324b",
+              "surface": "#111127",
+              "primary-container": "#003259",
+              "primary-fixed": "#d2e4ff",
+              "primary": "#a5c9f8",
+              "on-tertiary-container": "#14a1eb",
+              "on-tertiary-fixed": "#001e30",
+              "on-primary-fixed": "#001d36",
+              "secondary-fixed": "#bbe9ff",
+              "on-tertiary": "#003450",
+              "on-secondary-fixed-variant": "#004d63",
+              "on-secondary-fixed": "#001f29",
+              "tertiary-container": "#003450",
+              "secondary": "#5fd4ff",
+              "error": "#ffb4ab",
+              "surface-bright": "#37374f",
+              "surface-container-low": "#191930",
+              "surface-container": "#1d1d34",
+              "inverse-primary": "#3b618a",
+              "surface-container-lowest": "#0c0c22",
+              "on-tertiary-fixed-variant": "#004b71",
+              "surface-tint": "#a5c9f8",
+              "on-background": "#e2dfff",
+              "on-surface-variant": "#c3c6cf",
+              "tertiary-fixed-dim": "#8fcdff",
+              "secondary-container": "#00a8d3",
+              "secondary-fixed-dim": "#5fd4ff",
+              "on-surface": "#e2dfff",
+              "outline": "#8d9199",
+              "on-error-container": "#ffdad6",
+              "tertiary": "#8fcdff",
+              "inverse-surface": "#e2dfff",
+              "primary-fixed-dim": "#a5c9f8",
+              "outline-variant": "#42474e",
+              "tertiary-fixed": "#cbe6ff",
+              "on-secondary": "#003545",
+              "surface-container-high": "#28283f",
+              "error-container": "#93000a",
+              "on-error": "#690005",
+              "background": "#111127",
+              "on-primary-container": "#779bc8",
+              "surface-dim": "#111127"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #111127; color: #e2dfff; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        
+        .constellation-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(95, 212, 255, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .ufo-float {
+            animation: ufo-float 6s ease-in-out infinite;
+        }
+
+        @keyframes ufo-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 20px rgba(83, 210, 255, 0.6);
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#111127]/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(83,210,255,0.15)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-[#5fd4ff] tracking-tighter font-headline">
+                Mission Brasil
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] font-bold tracking-[0.05em] text-[#ffffff] border-b-2 border-[#5fd4ff] pb-1 hover:scale-105 transition-transform duration-200" href="#">Solicitação</a>
+<a class="font-['Space_Grotesk'] font-bold tracking-[0.05em] text-[#c3c6cf] hover:text-[#5fd4ff] transition-colors hover:scale-105 transition-transform duration-200" href="#">Dashboard</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#c3c6cf] hover:text-[#5fd4ff] transition-all">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 min-h-screen relative overflow-hidden">
+<!-- Hero Section with Background Gradient and Pattern -->
+<section class="relative px-6 py-12 md:py-24 max-w-7xl mx-auto z-10">
+<div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#003259] to-[#111127] opacity-50"></div>
+<div class="absolute inset-0 -z-10 constellation-bg opacity-30"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<!-- Left Content -->
+<div class="md:col-span-7 space-y-8">
+<div class="space-y-4">
+<span class="label-small text-secondary tracking-[0.15em] font-bold uppercase text-[11px]">Início da Jornada</span>
+<h1 class="text-5xl md:text-7xl font-headline font-bold text-secondary leading-tight tracking-[0.05em]">
+                            Solicitação de Camiseta Corporativa
+                        </h1>
+<p class="text-xl md:text-2xl text-on-surface font-headline font-medium opacity-90 max-w-xl">
+                            Explore nossa política de distribuição e prepare-se para o lançamento.
+                        </p>
+</div>
+<!-- CTA Button -->
+<div class="pt-4">
+<button class="glow-button group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-secondary to-[#3bb4ff] text-on-primary font-headline font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                            Iniciar Solicitação
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-weight="fill">rocket_launch</span>
+</button>
+</div>
+</div>
+<!-- Right Visual -->
+<div class="md:col-span-5 flex justify-center relative">
+<div class="ufo-float relative">
+<div class="absolute -inset-4 bg-secondary/20 blur-3xl rounded-full"></div>
+<img alt="Astronaut in space" class="w-full max-w-[400px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(83,210,255,0.3)] rounded-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="cinematic close-up of a high-tech astronaut suit against a dark cosmic background with soft cyan neon rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMmeZfPoCTvmyUc0bdLrK7SBseCaOdPH_Nl2Ip9FpmtLoHOMUo2pgzV8KHkxNF3tpj54SGdhbuHPXx26W8WRB2lJMtuDgBZiCUopCLWi4pEi0VFC5F71GhWUH4mJ8pAO7EoY8XlHuGd1OYQb1bo26XFwKApzeHg9SjlqpyU3LTPENXgViBR2oFwR3_iHUZMKL87FT0kDIhbrUdGqrwIF0BzZNInuvIb9mdFaZX3T9825USdTfyZYWPdwMqg062TSTMPsL8SrUwNj2o"/>
+<!-- HUD Decorative Elements -->
+<div class="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-secondary/40 rounded-tr-xl"></div>
+<div class="absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-secondary/40 rounded-bl-xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid / Regulation Content -->
+<section class="px-6 py-16 max-w-7xl mx-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Main Regulation Card -->
+<div class="md:col-span-2 p-8 rounded-xl bg-[#1d1d34]/80 glass-panel border border-secondary/20 shadow-[0_0_40px_rgba(83,210,255,0.05)] relative">
+<div class="absolute top-0 left-0 w-16 h-[2px] bg-secondary"></div>
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
+<h2 class="text-2xl font-headline font-bold text-white tracking-wider uppercase">Regulamento da Missão</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<div class="flex gap-4">
+<span class="text-secondary font-headline font-bold">01.</span>
+<p>A solicitação é permitida apenas para tripulantes ativos com mais de 30 dias de casa.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary font-headline font-bold">02.</span>
+<p>Cada colaborador tem direito a 1 (um) kit por ciclo semestral de lançamentos.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary font-headline font-bold">03.</span>
+<p>O tamanho deve ser confirmado no ato da solicitação através do guia de medidas oficial disponível no Dashboard.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-secondary font-headline font-bold">04.</span>
+<p>O prazo de entrega é de 15 a 20 dias úteis após o fechamento do lote mensal.</p>
+</div>
+</div>
+</div>
+<!-- Status Sidebar / Information -->
+<div class="space-y-6">
+<div class="p-6 rounded-xl bg-surface-container-high border-l-4 border-success/50">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-lg font-headline font-bold text-white">Status do Lote</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Ativo</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">O lote atual de produção está aberto e aceitando novas solicitações até o fim do mês.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-high relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" data-alt="texture of high quality navy blue fabric with subtle weave patterns and professional stitching detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByno8JJh8Nui7m68-Li0DuihJq1_xkKeZtC7sTHrzpp6458G6DEZNqPQgTWZ3sa0zyPScV9ka6CdT5aFgH-vtnt9Fstw7FLpqp9bWTXOfR70OWJcdUawebSvYo87GDmNEUd49UncoaXA28q1ZB_f6JXx8Y16yWxJkhMLi7cKI-7V8a9qD5YWMdfN_5A73NM7dd1hfXQx6waqjI8rdhQxDLwiSnPIl5CXvcefSkDdjzC6dQPjAtQSD7jmlrUwU0GcTJwKF56eAewjYr"/>
+<div class="relative z-10">
+<h3 class="text-lg font-headline font-bold text-white mb-2">Qualidade do Traje</h3>
+<p class="text-sm text-on-surface-variant">Algodão 30.1 penteado com tecnologia de termorregulação para operações terrestres.</p>
+<div class="mt-4 flex gap-2">
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-[10px] font-bold uppercase">Premium</span>
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-[10px] font-bold uppercase">Eco-Friendly</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#111127] w-full py-12 border-t border-[#42474e]/20 mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 w-full gap-8 max-w-7xl mx-auto">
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-[#c3c6cf]">
+                © Mission Brasil - The Celestial Navigator
+            </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#c3c6cf] hover:text-[#5fd4ff] hover:translate-y-[-2px] transition-all duration-300" href="#">Regulamento</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#c3c6cf] hover:text-[#5fd4ff] hover:translate-y-[-2px] transition-all duration-300" href="#">Privacidade</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#c3c6cf] hover:text-[#5fd4ff] hover:translate-y-[-2px] transition-all duration-300" href="#">Suporte</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#5fd4ff] text-xl opacity-50">rocket</span>
+<span class="material-symbols-outlined text-[#5fd4ff] text-xl opacity-50">satellite_alt</span>
+</div>
+</div>
+</footer>
+</body></html>
